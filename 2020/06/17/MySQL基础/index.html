@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="MySQL基础"><meta name="keywords" content=""><meta name="author" content="Piller4F"><meta name="copyright" content="Piller4F"><title>MySQL基础 | Piller4F</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL基础"><span class="toc-number">1.</span> <span class="toc-text">SQL基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系数据库概述"><span class="toc-number">1.1.</span> <span class="toc-text">关系数据库概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">1.2.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装MySQL"><span class="toc-number">1.3.</span> <span class="toc-text">安装MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL的简单使用"><span class="toc-number">1.4.</span> <span class="toc-text">MySQL的简单使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登陆到MySQL"><span class="toc-number">1.4.1.</span> <span class="toc-text">登陆到MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建一个数据库"><span class="toc-number">1.4.2.</span> <span class="toc-text">创建一个数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择所要操作的数据库"><span class="toc-number">1.4.3.</span> <span class="toc-text">选择所要操作的数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据库表"><span class="toc-number">1.4.4.</span> <span class="toc-text">创建数据库表</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://i.loli.net/2020/04/03/NHGA4cXkeSMDKml.png"></div><div class="author-info__name text-center">Piller4F</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">15</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://i.loli.net/2020/06/11/gMshtI2zZdwBjev.png)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Piller4F</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">主页</a><a class="site-page" href="/archives">归档</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">MySQL基础</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-06-17</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><p>什么是SQL？SQL是结构化查询语言的缩写，用来访问和操作数据库系统。SQL语句既可以查询数据库中的数据，也可以添加、更新和删除数据库中的数据，还可以对数据库进行管理和维护操作。不同的数据库，都支持SQL，这样，我们通过学习SQL这一种语言，就可以操作各种不同的数据库。</p>
+<hr>
+<h2 id="关系数据库概述"><a href="#关系数据库概述" class="headerlink" title="关系数据库概述"></a>关系数据库概述</h2><p>关系模型把数据看成是一个二维表格，任何数据都可以通过行号+列好来唯一确定，它的数据模型  看起来就是一个Excel表</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>姓名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>XXX</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>INT</td>
+<td>整形</td>
+<td>4字节整数类型</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>长整型</td>
+<td>8字节整数类型</td>
+</tr>
+<tr>
+<td>REAL</td>
+<td>浮点型</td>
+<td>4字节浮点数</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>浮点型</td>
+<td>8字节浮点数</td>
+</tr>
+<tr>
+<td>DECIMAL(M,N)</td>
+<td>高精度小数</td>
+<td>例如DECIMAL(20,10),一共20位,小数10位</td>
+</tr>
+<tr>
+<td>CHAR(N)</td>
+<td>定长字符串</td>
+<td>存储指定长度字符串，CHAR(100)总是存储100个字符的字符串</td>
+</tr>
+<tr>
+<td>VARCHAR(N)</td>
+<td>变长字符串</td>
+<td>VARCHAR(100)可以存储0~100个字符的字符串</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>布尔类型</td>
+<td>存储true或false</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>日期类型</td>
+<td>存储日期例如,2020-06-17</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>时间类型</td>
+<td>存储时间例如,18:59:59</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>日期和时间类型</td>
+<td>例如,2020-06-17 18:59:59</td>
+</tr>
+<tr>
+<td>注意: SQL语言关键字不区分大小写,但是针对不同的数据库，对于表名和列名，有的数据区分大小写，有的数据不区分大小写。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><ol>
+<li><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">官网下载</a></li>
+</ol>
+<ul>
+<li>1</li>
+</ul>
+<ol start="2">
+<li>不懂的话就一路next下去</li>
+<li>添加环境变量<br>打开 Windows 环境变量设置, 新建变量名 MYSQL_HOME , 变量值为 MySQL 安装目录路径,这里为<code>C:\Program Files\MySQL\MySQL Server 8.0</code>环境变量的Path变量中添加;%MYSQL_HOME%\bin;使用指令<code>mysql -u root -p</code>输入密码,如果变为<code>mysql&gt;</code>则成功。</li>
+</ol>
+<h2 id="MySQL的简单使用"><a href="#MySQL的简单使用" class="headerlink" title="MySQL的简单使用"></a>MySQL的简单使用</h2><h3 id="登陆到MySQL"><a href="#登陆到MySQL" class="headerlink" title="登陆到MySQL"></a>登陆到MySQL</h3><p>命令行输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<ul>
+<li>-u:所要登录的用户名;</li>
+<li>-p:告诉服务器会使用一个密码登陆;<br>出现<code>mysql&gt;</code>则成功</li>
+</ul>
+<h3 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h3><p>使用<code>create database</code>语句可完成对数据库的创建，创建命令的格式如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名 [其它选项]</span><br></pre></td></tr></table></figure>
+<p>假如我们需要创建一个名<code>sample</code>的数据库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database sample character set gbk;</span><br></pre></td></tr></table></figure>
+<p>提示:<code>Query OK, 1 row affected (0.01 sec)</code>则成功。注意输入末端有<code>;</code>号，表明输入完毕。使用<code>show databases;</code>可以查看建立了哪些数据库。</p>
+<h3 id="选择所要操作的数据库"><a href="#选择所要操作的数据库" class="headerlink" title="选择所要操作的数据库"></a>选择所要操作的数据库</h3><ul>
+<li>再登录数据库时指令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令：mysql -D 数据库名 -h 主机名 -u 用户名 -p</span><br></pre></td></tr></table></figure></li>
+<li>登录后使用<code>use</code>命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><p>使用<code>create table</code>语句可完成对表的创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table 表名称(列声明);</span><br></pre></td></tr></table></figure>
+<p>以创建student表为例,表中存放学号(id)、姓名(name)、性别(sex)、年龄(age)、联系电话(tel)这些内容:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table students</span><br><span class="line">(</span><br><span class="line">	id int unsigned not null auto_increment primary key,</span><br><span class="line">	name char(8) not null,</span><br><span class="line">	sex char(4) not null,</span><br><span class="line">	age tinyint unsigned not null,</span><br><span class="line">	tel char(13) null default &quot;-&quot;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>直接输入容易出错，因建立一个<code>createtable.sql</code>文件导入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -D sample -u root -p &lt; F:\MySQLPractice\createtable.sql</span><br></pre></td></tr></table></figure>
+<p>语句解释:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table tablename(columns)为创建数据库表的命令，列的名称以及该列的数据类型将在括号中完成;</span><br><span class="line">括号内声明了5列内容，id、name、sex、age、tel为列名称，后面跟的是数据类型描述，列与列之间用‘,’隔开;</span><br><span class="line">以&quot;id int unsigned not null auto-increment primary key&quot;介绍</span><br><span class="line">id:列名称</span><br><span class="line">int:类型为int</span><br><span class="line">not null:说明该值不为空</span><br><span class="line">auto_increment:在列中使用,作用为当插入数据时列如果为NULL,会自动产生一个比显存更大的唯一标识符值;</span><br><span class="line">primary key:表明该列是主键，本列的值唯一;</span><br></pre></td></tr></table></figure></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Piller4F</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/06/17/MySQL%E5%9F%BA%E7%A1%80/">http://yoursite.com/2020/06/17/MySQL%E5%9F%BA%E7%A1%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://piller4f.github.io/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com">Piller4F</a>！</span></div></div><div class="post-meta__tag-list"></div><div class="addthis_inline_share_toolbox pull-right"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dd8f37b7cd00be8" async></script><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/07/04/Git%E7%9A%84%E4%BD%BF%E7%94%A8/"><i class="fa fa-chevron-left">  </i><span>GIT的使用</span></a></div><div class="next-post pull-right"><a href="/2020/06/17/Java%E5%9F%BA%E7%A1%80/"><span>Java快速入门</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '7f0d32070f44e89fd72c',
+  clientSecret: '9b3bf322ead22e17245eec922e98a6d0e7c7602f',
+  repo: 'piller4f.github.io',
+  owner: 'Piller4F',
+  admin: 'Piller4F',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(https://i.loli.net/2020/06/11/gMshtI2zZdwBjev.png)"><div class="layout" id="footer"><div class="copyright">&copy;2020 - 2021 By Piller4F</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="footer_custom_text">欢迎访问</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
